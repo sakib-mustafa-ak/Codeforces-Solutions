@@ -3,11 +3,11 @@ int main(){
     int n,X=0;
     scanf("%d",&n);
     while (n--){
-        char a[3];
+        char a[4];
         scanf("%s",&a);
-        if (a[0]=='+' && a[2]=='+'){
+        if (a[0]=='+' || a[2]=='+'){
             X++;
-        } else if (a[0]=='-' && a[2]=='-'){
+        } else if (a[0]=='-' || a[2]=='-'){
             X--;
         }
     }
