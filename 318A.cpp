@@ -1,20 +1,22 @@
 #include <bits/stdc++.h>
+long long num(long long n, long long k);
 using namespace std;
 int main()
 {
     long long n, k;
-    cin >> n >> k;
-    long long a[n], x = 1, y = 2;
-    for (long long i = 0; i < (n + 1) / 2; i++)
-    {
-        a[i] = x;
-        x += 2;
-    }
-    for (long long i = (n + 1) / 2; i < n; i++)
-    {
-        a[i] = y;
-        y += 2;
-    }
-    printf("%lld\n", a[k - 1]);
+    scanf("%lld%lld", &n, &k);
+    printf("%lld\n", num(n, k));
     return 0;
+}
+long long num(long long n, long long k)
+{
+    long long odd = (n + 1) / 2;
+    if (k <= odd)
+    {
+        return 2 * k - 1;
+    }
+    else
+    {
+        return 2 * (k - odd);
+    }
 }
