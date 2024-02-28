@@ -3,18 +3,15 @@ using namespace std;
 
 int main()
 {
-    int n, m, count = 0;
+    int n, m, count;
     cin >> n >> m;
-    for (int i = 0; i < n + m; i++)
-    {
-        n--;
-        m--;
-        count++;
-        if (n <= 0 || m <= 0)
-            break;
-    }
+    if (n > m)
+        count = (n * m) / n;
+    else
+        count = (n * m) / m;
+
     if (count % 2 == 0)
         cout << "Malvika" << endl;
-    else if (count % 2 == 1)
+    else
         cout << "Akshat" << endl;
 }
