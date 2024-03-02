@@ -1,52 +1,43 @@
 // incorrect code
 #include <bits/stdc++.h>
 using namespace std;
+void solve()
+{
+    int n;
+    cin >> n;
+    int coin = n;
+    for (int a = 0; a <= 10; a++)
+    {
+        for (int b = 0; b <= 10; b++)
+        {
+            for (int c = 0; c <= 10; c++)
+            {
+                for (int d = 0; d <= 10; d++)
+                {
+                    int en = a * 10;
+                    en += (b * 6);
+                    en += (c * 3);
+                    en += (d * 1);
+                    if (n - en >= 0)
+                    {
+                        if ((n - en) % 15 == 0)
+                        {
+                            coin = min(coin, a + b + c + d + ((n - en) / 15));
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    cout << coin << endl;
+}
 int main()
 {
     int t;
     cin >> t;
     while (t--)
     {
-        long long n, coin = 0;
-        cin >> n;
-        if (n == 30 || n == 20 || n == 12)
-        {
-            coin = 2;
-        }
-        else
-        {
-            while (n > 15)
-            {
-                n = n - 15;
-                coin++;
-
-                if (n == 20 || n == 26 || n == 23 || n == 21)
-                {
-                    n = n - 20;
-                    coin += 2;
-                    break;
-                }
-                else if (n == 12)
-                {
-                    n = 0;
-                    coin += 2;
-                    break;
-                }
-                else if (n < 15)
-                {
-                    break;
-                }
-            }
-            if (n > 10)
-            {
-                n -= 10;
-                coin++;
-            }
-
-            coin = coin + n / 6;
-            coin = coin + (n % 6) / 3;
-            coin = coin + ((n % 6) % 3) / 1;
-        }
-        cout << coin << endl;
+        solve();
     }
 }
