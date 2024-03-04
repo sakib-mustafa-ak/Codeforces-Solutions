@@ -1,1 +1,1 @@
-&& main[j - 1] != ' '
+cout << endl;
