@@ -10,8 +10,34 @@ void solve()
             cin >> a[i][j];
         }
     }
-    int count = 1, count2 = 0, end = 0;
+    int count = 0, count2 = 0, end = 0;
     for (int i = 0; i < 8; i++)
+    {
+        for (int j = 0; j < 8; j++)
+        {
+            if (a[i][j] == 'R')
+            {
+                count++;
+            }
+        }
+        if (count == 8)
+        {
+            break;
+        }
+        else
+        {
+            count = 0;
+        }
+    }
+    if (count == 8)
+    {
+        cout << "R" << endl;
+    }
+    else
+    {
+        cout << "B" << endl;
+    }
+    /*for (int i = 0; i < 8; i++)
     {
         for (int j = 1; j < 8; j++)
         {
@@ -68,7 +94,7 @@ void solve()
         {
             count = 1;
         }
-    }
+    }*/
 }
 int main()
 {
