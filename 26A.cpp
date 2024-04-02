@@ -1,10 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
-
-int main()
+int almost_prime(int n)
 {
-    int n;
-    cin >> n;
     vector<int> prime;
     int result = 0;
 
@@ -39,5 +36,12 @@ int main()
             result++;
         }
     }
-    cout << result << endl;
+    return result;
+}
+int main()
+{
+    int n;
+    cin >> n;
+
+    cout << almost_prime(n) << endl;
 }
