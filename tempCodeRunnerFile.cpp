@@ -1,1 +1,1 @@
-(ans[r + 1][c] == 1) ? ans[r + 1][c] = 0 : ans[r + 1][c] = 1;
+cout << count << endl;
