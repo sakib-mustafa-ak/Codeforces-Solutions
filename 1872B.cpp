@@ -3,17 +3,16 @@ using namespace std;
 
 void solve()
 {
-    int n, max = 0;
+    int n, maxk = INT_MAX;
     cin >> n;
-    for (int i = 1; i <= n; i++)
+    while (n--)
     {
         int d, s;
         cin >> d >> s;
-        int k = i + s - 1;
-        if (k > max)
-            max = k;
+        int k = d + (s - 1) / 2;
+        maxk = min(k, maxk);
     }
-    cout << max << endl;
+    cout << maxk << endl;
 }
 
 int main()
