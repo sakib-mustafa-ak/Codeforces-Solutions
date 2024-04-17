@@ -22,7 +22,7 @@ int main()
     else
     {
         if (zero > 0)
-            cout << count + 1 << endl;
+            cout << count + 1. << endl;
         else
             cout << count + 2 << endl;
     }
