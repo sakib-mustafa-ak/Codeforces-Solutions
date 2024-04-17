@@ -6,7 +6,7 @@ int main()
     ll n, count = 0;
     cin >> n;
     vector<ll> arr(n);
-    ll neg = 0, zero = 0;
+    ll neg = 0, zeros = 0;
     for (ll i = 0; i < n; i++)
     {
         cin >> arr[i];
@@ -14,16 +14,15 @@ int main()
         if (arr[i] < 0)
             neg++;
         else if (arr[i] == 0)
-            zero++;
+            zeros++;
     }
 
-    if (neg % 2 == 0)
-        cout << count << endl;
-    else
+    if (neg % 2 == 1)
     {
-        if (zero > 0)
-            cout << count + 1. << endl;
+        if (zeros > 0)
+            count;
         else
-            cout << count + 2 << endl;
+            count += 2;
     }
+    cout << count << endl;
 }
