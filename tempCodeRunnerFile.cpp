@@ -1,1 +1,1 @@
-cout << min(count0, count5) << endl;
+, count = 1
