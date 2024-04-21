@@ -29,6 +29,7 @@ int main()
                 cout << "1 ";
             }
         }
+
         cout << k << endl;
     }
 }
