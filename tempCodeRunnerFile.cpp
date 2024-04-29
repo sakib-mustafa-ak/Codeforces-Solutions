@@ -1,2 +1,5 @@
-else if (r == 4)
-                printf("0");
+if (a[i] < mn)
+            {
+                mn = a[i];
+                mni = i;
+            }
