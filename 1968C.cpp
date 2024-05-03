@@ -15,21 +15,14 @@ int main()
         a[0] = x[0] + 1;
         for (int i = 1; i < n; i++)
         {
-            if (a[i - 1] > x[i - 1] && x[i - 1] % a[i - 1] == x[i - 1])
+            if (a[i - 1] > x[i - 1] && x[i - 1] % a[i - 1] == x[i - 1] && x[i - 1] > x[i])
                 a[i] = x[i - 1];
-            else if ((a[i - 1] + x[i - 1]) % a[i - 1] == x[i - 1])
+            else if ((a[i - 1] + x[i - 1]) % a[i - 1] == x[i - 1] && x[i - 1] > x[i])
                 a[i] = a[i - 1] + x[i - 1];
             else
             {
-                int monu = 1;
-                while (monu++)
-                {
-                    if ((monu * a[i - 2] + x[i - 2] + x[i - 1]) % a[i - 1] == x[i - 1])
-                    {
-                        a[i - 1] = monu * a[i - 2] + x[i - 2], i--;
-                        break;
-                    }
-                }
+                int monu = (x[i - 1] / a[i - 1] + 1);
+                a[i] = monu * a[i - 1] + x[i - 1];
             }
         }
         for (int i = 0; i < n; i++)
