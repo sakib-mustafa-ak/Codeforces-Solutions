@@ -1,5 +1,1 @@
-if (a[i] < mn)
-            {
-                mn = a[i];
-                mni = i;
-            }
+        count = count * 2 - 1;
