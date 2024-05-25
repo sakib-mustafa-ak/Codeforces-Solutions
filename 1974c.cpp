@@ -32,6 +32,7 @@ int_fast32_t main()
                 }
             }
         }
+
         cout << count << endl;
     }
 }
