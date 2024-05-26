@@ -10,20 +10,23 @@ signed main()
     {
         int n, flag = 1;
         cin >> n;
-        vector<int> a(n);
+        vector<int> a(n), b;
         for (int i = 0; i < n; i++)
             cin >> a[i];
         sort(a.begin(), a.end());
-        for (int i = 2; i < n; i++)
+        for (int i = 0; i < n; i++)
         {
-            if (a[i] % a[0] != 0 && a[i] % a[1] != 0)
+            if (a[i] % a[0] != 0)
+                b.push_back(a[i]);
+        }
+        for (int i = 0; i < b.size(); i++)
+        {
+            if (b[i] % b[0] != 0)
             {
                 flag = 0;
-                cout << "No\n";
                 break;
             }
         }
-        if (flag == 1)
-            cout << "Yes\n";
+        (flag == 1) ? cout << "Yes\n" : cout << "No\n";
     }
 }
