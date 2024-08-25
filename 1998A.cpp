@@ -9,29 +9,14 @@ int main()
     {
         int x, y, k;
         cin >> x >> y >> k;
-        int xt, yt, sum = 0;
-        xt = x * k;
-        yt = y * k;
-        for (int i = 1; i < k; i++)
+        int x1 = x, x2 = x;
+        if (k % 2 == 1)
+            cout << x << " " << y << endl;
+
+        for (int i = 0; i < k / 2; i++)
         {
-            if (xt < 0 || yt < 0)
-            {
-                cout << i * (-1) << " " << i * (-1) << "\n";
-                sum -= i;
-            }
-            else
-            {
-                cout << i << " " << i << "\n";
-                sum += i;
-            }
-        }
-        if (sum < 0)
-        {
-            cout << xt + sum << " " << yt + sum << "\n";
-        }
-        else
-        {
-            cout << xt - sum << " " << yt - sum << "\n";
+            cout << ++x1 << " " << y << endl;
+            cout << --x2 << ' ' << y << endl;
         }
     }
 }
