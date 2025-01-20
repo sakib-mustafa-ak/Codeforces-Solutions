@@ -1,4 +1,3 @@
-//unfinished
 #include<bits/stdc++.h>
 using namespace std;
 #define int long long
@@ -9,26 +8,21 @@ using namespace std;
 #define ff first
 #define ss second
 void solve(){
-    int n,m1,m2;
-    cin>>n>>m1>>m2;
-    vector<int> f[n],g[n];
-    for (int i = 0; i < m1; ++i)3
-    {
-    	int x,y;
-    	cin>>x>>y;
-    	f[x].push_back(y);
-    }
-    for (int i = 0; i < m2; ++i)
-    {
-    	int x,y;
-    	cin>>x>>y;
-    	g[x].push_back(y);
-    }
-
+    int n,even = 0, odd = 0;
+    cin>>n;
+    vector<int> a(n);
     for (int i = 0; i < n; ++i)
     {
-    	
+    	cin>>a[i];
+    	if(a[i]%2==0)
+    		even++;
+    	if(a[i]%2==1)
+    		odd++;
     }
+    if(even>0)
+    cout<<1+odd<<endl;
+	else
+		cout<<0<<endl;
 }
 
 signed main(){
