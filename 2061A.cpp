@@ -8,21 +8,37 @@ using namespace std;
 #define ff first
 #define ss second
 void solve(){
-    int n,even = 0, odd = 0;
+    int n,sum = 0, ans = 0;
     cin>>n;
-    vector<int> a(n);
+    vector<int> a(n),even,odd;
     for (int i = 0; i < n; ++i)
     {
     	cin>>a[i];
     	if(a[i]%2==0)
-    		even++;
-    	if(a[i]%2==1)
-    		odd++;
+    		even.push_back(a[i]);
+    	else
+    		odd.push_back(a[i]);
     }
-    if(even>0)
-    cout<<1+odd<<endl;
-	else
-		cout<<0<<endl;
+    
+    for(auto v : even){
+        sum+=v;
+        if(sum%2==0){
+            ans++;
+            while(sum%2==0)
+                sum/=2;
+        }
+    }
+
+    for(auto v : odd){
+        sum+=v;
+        if(sum%2==0){
+            ans++;
+            while(sum%2==0)
+                sum/=2;
+        }
+    }
+
+    cout<<ans<<endl;
 }
 
 signed main(){
