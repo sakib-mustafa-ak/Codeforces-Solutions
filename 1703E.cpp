@@ -12,9 +12,9 @@ void solve(){
     cin>>n;
     vector<string> v(n);
     map<pair<int,int>,bool> vis;
-    for (int i = 0; i < n; ++i){
+    for (int i = 0; i < n; ++i)
     	cin>>v[i];
-    }
+
     int  ans = 0;
     for (int i = 0; i < n; ++i)
     {
