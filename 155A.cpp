@@ -1,27 +1,44 @@
-#include <bits/stdc++.h>
+#include<bits/stdc++.h>
 using namespace std;
+#define int long long
+#define endl '\n'
+#define Start ios::sync_with_stdio(0); cin.tie(0); cout.tie(0);
+#define all(v) v.begin(),v.end()
+#define rall(v) v.rbegin(),v.rend()
+#define ff first
+#define ss second
+#define pb push_back
+#define pr pair<int,int>
 
-void solve()
-{
-    long long n;
-    cin >> n;
-    if (n <= 6)
-        cout << 15 << endl;
-    else
+void solve(){
+    int n, ans = 0,maxf = -1, minf = INT_MAX; cin>>n;
+    for (int i = 0; i < n; ++i)
     {
-        if (n % 2 == 0)
-            cout << (n / 2) * 5 << endl;
-        else
-            cout << (n / 2 + 1) * 5 << endl;
+    	int x;
+    	cin>>x;
+    	if(i == 0){
+    		maxf = x;
+    		minf = x;
+    	}
+    	else{
+    		if(x>maxf){
+    			ans++;
+    			maxf = x;
+    		}
+    		if(x< minf){
+    			ans++;
+    			minf = x;
+    		}
+    	}
     }
+    cout<<ans<<endl;
 }
 
-int main()
-{
-    int t;
-    cin >> t;
-    while (t--)
-    {
+signed main(){
+    Start
+    int t = 1;
+    //cin>>t;
+    while(t--){
         solve();
     }
 }

@@ -1,64 +1,48 @@
-#include <bits/stdc++.h>
+#include<bits/stdc++.h>
 using namespace std;
-#define ll long long
+#define int long long
+#define endl '\n'
+#define Start ios::sync_with_stdio(0); cin.tie(0); cout.tie(0);
+#define all(v) v.begin(),v.end()
+#define rall(v) v.rbegin(),v.rend()
+#define ff first
+#define ss second
+#define pb push_back
+#define pr pair<int,int>
 
-int main()
-{
-    int t;
-    cin >> t;
-    while (t--)
-    {
-        ll n, m, k;
-        cin >> n >> m >> k;
-        string s;
-        cin >> s;
-        ll ans = 1;
-        vector<ll> co, croc;
-        ll count = 0, sum = 0, cro = 0;
-        if (m > n)
-            ans = 1;
-        for (int i = 0; i < s.size(); i++)
-        {
-            count++;
-            if (s[i] == 'L')
-            {
-                co.push_back(count);
-                count = 0;
-                if (s[i + m] == 'C')
-                {
-                    ans = 0;
-                    break;
-                }
-            }
-            if (s[i] == 'C')
-                cro++;
-            if (s[i] != 'C')
-            {
-                croc.push_back(cro);
-                cro = 0;
-            }
+void solve(){
+    int n,m,k,pos=0,sw=0;
+    cin>>n>>m>>k;
+    string s;
+    cin>>s;
+    s = "L" + s + "L";
+    n += 2;
+    int flag = 1;
+    for(int pos = 0 ; pos < n-1 ; pos++){
+        int nxt = pos+1;
+        while(nxt - pos < m and s[nxt] != 'L'){
+            nxt++;
         }
-        count++;
-        co.push_back(count);
-        croc.push_back(cro);
-        for (int i = 0; i < co.size(); i++)
-        {
-            co[i] -= m;
-            if (co[i] >= 0)
-                sum += co[i];
-        }
-        for (int i = 0; i < croc.size(); i++)
-        {
-            croc[i] -= m;
-            if (croc[i] >= 0)
-            {
-                ans = 0;
-                break;
+        if(s[nxt] == 'L')
+            pos = nxt-1;
+        else{
+            while(s[nxt] != 'L'){
+                sw++;
+                if(s[nxt] == 'C')
+                    flag = 0;
+                nxt++;
             }
+            pos = nxt - 1;
         }
+    }
+    cout<<((flag and sw <= k)? "Yes\n":"No\n");
+}
 
-        if (sum > k)
-            ans = 0;
-        (ans == 1) ? cout << "YES\n" : cout << "NO\n";
+signed main(){
+    Start
+    int t = 1;
+    cin>>t;
+    while(t--){
+        solve();
     }
 }
